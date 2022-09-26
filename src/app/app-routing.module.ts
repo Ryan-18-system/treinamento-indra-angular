@@ -31,7 +31,7 @@ const routes: Routes = [
   },{
     path:'operacao/:agencia/:numero/:tipoOperacacao', component: OperacaoComponent
   },{
-    path: 'transferir', component: TransferenciaComponent
+    path: 'transferir/:agencia/:numero', component: TransferenciaComponent
   }
 
 ];
