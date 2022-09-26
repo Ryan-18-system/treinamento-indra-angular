@@ -1,0 +1,25 @@
+<form>
+  {{titulo}}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputAgencia">Agência</label>
+      <input type="text" class="form-control" id="inputAgencia"  disabled value="{{agencia}}">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputConta">Nº da Conta</label>
+      <input type="text" class="form-control" id="inputConta"  disabled  value="{{numeroConta}}">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputSaldo">Saldo da Conta</label>
+      <input type="number" class="form-control" id="inputSaldo" #valor>
+    </div>
+  </div>
+  <button  class="btn btn-danger" style="margin-top: 10px" *ngIf="!verificaOperacao" (click)="realizarSaque(agencia||'',numeroConta||'',valor.value||'')">Realizar Saque</button>
+  <button  class="btn btn-success" style="margin-top: 10px" *ngIf="verificaOperacao" (click)="realizarDeposito(agencia||'',numeroConta||'',valor.value||'')">Realizar Depósito</button>
+</form>
+
+
