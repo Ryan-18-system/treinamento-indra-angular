@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ClientesService} from "../../../services/clientes.service";
 import {ContasService} from "../../../services/contas.service";
 import {IConta} from "../../../interfaces/conta";
@@ -20,12 +20,12 @@ export class CadastrarContaComponent implements OnInit {
 
   numeroConta: string = '';
 
-  cliente:ICliente = {
+  cliente: ICliente = {
     cpf: "",
     email: "",
     nome: "",
     observacoes: "",
-    ativo:true,
+    ativo: true,
   }
 
   newContaUser: IConta = {
@@ -42,11 +42,11 @@ export class CadastrarContaComponent implements OnInit {
               private routeador: Router,
               private mensagemService: MensagemAlertService) {
     this.verificaId = this.rotaAtual.snapshot.paramMap.has('id')
-    if(this.verificaId){
-      this.idCliente= this.rotaAtual.snapshot.paramMap.get('id')
+    if (this.verificaId) {
+      this.idCliente = this.rotaAtual.snapshot.paramMap.get('id')
       this.buscarClientePorId()
-    }else{
-      console.error("ERROR NO ID")
+    } else {
+      this.mensagemService.mensagemDeAlerta("ID INVÁLIDO")
     }
 
   }
@@ -56,40 +56,42 @@ export class CadastrarContaComponent implements OnInit {
     this.gerarNumeroConta();
   }
 
-  buscarClientePorId(){
-      this.clienteService.buscarClientePorId(this.idCliente || "").subscribe({
-        next: cliente => {
-          this.cliente = cliente
-          this.newContaUser.cliente = this.cliente
-        },
-        error: err => this.mensagemService.mensagemDeError("Error ao buscar cliente por id")
-      })
+  buscarClientePorId() {
+    this.clienteService.buscarClientePorId(this.idCliente || "").subscribe({
+      next: cliente => {
+        this.cliente = cliente
+        this.newContaUser.cliente = this.cliente
+      },
+      error: err => this.mensagemService.mensagemDeError("Error ao buscar cliente por id")
+    })
   }
-  private gerarNumeroConta(){
-      for(let i=0; i<=4 ;i++){
-        if(i===4){
-          this.numeroConta += "-"+Math.floor(Math.random()*10)
-        }else{
-          this.numeroConta += Math.floor(Math.random()*10)
-        }
+
+  private gerarNumeroConta() {
+    for (let i = 0; i <= 4; i++) {
+      if (i === 4) {
+        this.numeroConta += "-" + Math.floor(Math.random() * 10)
+      } else {
+        this.numeroConta += Math.floor(Math.random() * 10)
+      }
 
     }
-      this.newContaUser.numero = this.numeroConta
+    this.newContaUser.numero = this.numeroConta
   }
-  private gerarAgencia(){
-    for(let i=0; i<4 ;i++){
-      this.agencia += Math.floor(Math.random()*10)
+
+  private gerarAgencia() {
+    for (let i = 0; i < 4; i++) {
+      this.agencia += Math.floor(Math.random() * 10)
     }
     this.newContaUser.agencia = this.agencia
   }
 
-  cadastrarConta(saldo:string){
-    if(saldo === ""){
+  cadastrarConta(saldo: string) {
+    if (saldo === "") {
       this.newContaUser.saldo = 0
     }
     this.newContaUser.saldo = parseFloat(saldo)
     this.contaService.cadastrarConta(this.newContaUser).subscribe({
-      next: ()=> {
+      next: () => {
         this.mensagemService.mensagemDeSucesso("Conta Cadastrada com sucesso")
         this.routeador.navigate(['/contas'])
       },
