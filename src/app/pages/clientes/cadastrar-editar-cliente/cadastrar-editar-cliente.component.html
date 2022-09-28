@@ -1,20 +1,21 @@
-<form [formGroup]="formGroup">
+<div class="d-flex flex-column justify-content-center align-items-center ">
+<form [formGroup]="formGroup" class="row g-1">
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
       <label for="inputNome">Nome</label>
       <input type="text" class="form-control" id="inputNome" placeholder="Nome Completo" formControlName="nome">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md">
       <label for="inputEmail4">Email</label>
       <input type="email" class="form-control" id="inputEmail4" placeholder="Email" formControlName="email">
     </div>
   </div>
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
       <label for="inputCPF">CPF</label>
       <input type="text" class="form-control" id="inputCPF"    placeholder="CPF sem pontuação" formControlName="cpf">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md">
       <label for="inputObs">Observações</label>
       <textarea type="text" class="form-control" id="inputObs" formControlName="observacoes"></textarea>
     </div>
@@ -27,10 +28,13 @@
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid" *ngIf="this.operacaoCadastro" (click)="cadastrarNewCliente()">
-    Cadastrar
-  </button>
-  <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid" *ngIf="!this.operacaoCadastro" (click)="editCliente()">
-    Editar
-  </button>
+  <div class="d-flex justify-content-center align-items-center">
+    <button type="submit" class="btn btn-primary " [disabled]="formGroup.invalid" *ngIf="this.operacaoCadastro" (click)="cadastrarNewCliente()">
+      Cadastrar
+    </button>
+    <button type="submit" class="btn btn-primary " [disabled]="formGroup.invalid" *ngIf="!this.operacaoCadastro" (click)="editCliente()">
+      Editar
+    </button>
+  </div>
 </form>
+</div>
