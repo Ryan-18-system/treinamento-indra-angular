@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-sm-6" *ngFor="let extrato of arrayExtratos">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title badge bg-warning">{{extrato.data}}</h5>
+        <p class="card-text">AG:{{extrato.agencia}} Nº: {{extrato.numeroConta}}</p>
+        <p class="card-text"><span class="badge text-bg-dark">Operação: {{extrato.tipoDeOperacao}}</span></p>
+        <p class="card-text badge bg-danger" *ngIf="extrato.tipoDeOperacao == 'saque'">Valor: {{extrato.valor}}</p>
+        <p class="card-text badge bg-success" *ngIf="extrato.tipoDeOperacao == 'deposito'">Valor: {{extrato.valor}}</p>
+      </div>
+    </div>
+  </div>
+</div>

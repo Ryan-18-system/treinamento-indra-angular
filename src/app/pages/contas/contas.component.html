@@ -35,6 +35,7 @@
               <li><a class="dropdown-item" [routerLink]="['/operacao/',conta.agencia,conta.numero,'saque']">sacar</a></li>
               <li><a class="dropdown-item" [routerLink]="['/operacao/',conta.agencia,conta.numero,'deposito']">depositar</a></li>
               <li><a class="dropdown-item" [routerLink]="['/transferir/',conta.agencia,conta.numero]">transferir</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/extratos/',conta.numero,conta.agencia]">Extrato</a></li>
               <li><a class="dropdown-item" (click)="excluirContaPorId(conta.id||0)">Excluir</a></li>
             </ul>
           </div>
@@ -68,6 +69,7 @@
               <li><a class="dropdown-item" [routerLink]="['/operacao/',conta.agencia,conta.numero,'saque']">sacar</a></li>
               <li><a class="dropdown-item" [routerLink]="['/operacao/',conta.agencia,conta.numero,'deposito']">depositar</a></li>
               <li><a class="dropdown-item" [routerLink]="['/transferir/',conta.agencia,conta.numero]">transferir</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/extratos/',conta.numero,conta.agencia]">Extrato</a></li>
               <li><a class="dropdown-item" (click)="excluirContaPorId(conta.id||0)">Excluir</a></li>
             </ul>
           </div>

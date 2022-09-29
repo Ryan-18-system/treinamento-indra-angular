@@ -7,6 +7,7 @@ import {CadastrarEditarClienteComponent} from "./pages/clientes/cadastrar-editar
 import {CadastrarContaComponent} from "./pages/contas/cadastrar-conta/cadastrar-conta.component";
 import {OperacaoComponent} from "./pages/contas/operacao/operacao.component";
 import {TransferenciaComponent} from "./pages/contas/transferencia/transferencia.component";
+import {ExtratosComponent} from "./pages/extratos/extratos.component";
 
 const routes: Routes = [
   {
@@ -32,6 +33,9 @@ const routes: Routes = [
     path:'operacao/:agencia/:numero/:tipoOperacacao', component: OperacaoComponent
   },{
     path: 'transferir/:agencia/:numero', component: TransferenciaComponent
+  },
+  {
+    path:'extratos/:numero/:agencia', component: ExtratosComponent
   }
 
 ];

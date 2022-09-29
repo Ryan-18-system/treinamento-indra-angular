@@ -15,6 +15,8 @@ import { PipeCpfPipe } from './pipes/pipe-cpf.pipe';
 import { OperacaoComponent } from './pages/contas/operacao/operacao.component';
 import { TransferenciaComponent } from './pages/contas/transferencia/transferencia.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ExtratosComponent } from './pages/extratos/extratos.component';
+
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PipeCpfPipe,
     OperacaoComponent,
     TransferenciaComponent,
+    ExtratosComponent,
+
   ],
     imports: [
         BrowserModule,
