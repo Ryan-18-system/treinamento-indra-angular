@@ -1,18 +1,18 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'pipeCpf'
 })
 export class PipeCpfPipe implements PipeTransform {
 
-  transform(value: string|undefined, ocultarAlgunsValores: boolean = false): string {
-     let valorFormatado = value + '';
-     valorFormatado = valorFormatado
-       .padStart(11,'0')
-       .substring(0,11)
-       .replace(/[^0-9]/,'')
-       .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,
-         '$1.$2.$3-$4')
+  transform(value: string | undefined, ocultarAlgunsValores: boolean = false): string {
+    let valorFormatado = value + '';
+    valorFormatado = valorFormatado
+      .padStart(11, '0')
+      .substring(0, 11)
+      .replace(/[^0-9]/, '')
+      .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,
+        '$1.$2.$3-$4')
 
     if (ocultarAlgunsValores) {
       valorFormatado =
@@ -22,6 +22,7 @@ export class PipeCpfPipe implements PipeTransform {
   }
 
 }
+
 //Caso o tamanho do valor seja menor que 11, completaremos com zeros à esquerda.
 //Caso o tamanho da string seja maior que 11, vamos pegar apenas até a décima primeira posição.
 //Vamos retirar do valor qualquer coisa que não seja um número.

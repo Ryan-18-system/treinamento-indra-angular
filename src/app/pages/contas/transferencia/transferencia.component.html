@@ -1,38 +1,46 @@
-<form>
-  <div class="form-row ">
-    <div class="form-group col-md-6">
-      <label for="inputAgencia">Agência De origem</label>
-      <input type="text" class="form-control" id="inputAgencia"  disabled value="{{agencia}}">
+<div class="d-flex flex-column justify-content-center align-items-center ">
+  <form class="col g-1">
+    <h2 class="d-flex flex-column justify-content-center align-items-center">Transferência</h2>
+    <div class="form-row ">
+      <div class="form-group col-md-12">
+        <label for="inputAgencia">Agência De origem</label>
+        <input type="text" class="form-control" id="inputAgencia" disabled value="{{agencia}}">
+      </div>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputConta">Nº da Conta de Origem</label>
-      <input type="text" class="form-control" id="inputConta"  disabled  value="{{numeroConta}}">
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="inputConta">Nº da Conta de Origem</label>
+        <input type="text" class="form-control" id="inputConta" disabled value="{{numeroConta}}">
+      </div>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label>Agência de Destino</label>
-      <select class="form-select" aria-label="Default select example" >
-        <option selected>Selecione a Agência</option>
-        <option *ngFor="let agencia of arrayContas" #agenciaConta (click)="procurarNumeroContaDestino(agenciaConta.value)">{{agencia.agencia}}</option>
-      </select>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label>Agência de Destino</label>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Selecione a Agência</option>
+          <option *ngFor="let agencia of arrayContas" #agenciaConta
+                  (click)="procurarNumeroContaDestino(agenciaConta.value)">{{agencia.agencia}}</option>
+        </select>
+      </div>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label>Nº conta Destino</label>
-      <select class="form-select" aria-label="Default select example" >
-        <option>{{numeroContaDestino}}</option>
-      </select>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label>Nº conta Destino</label>
+        <select class="form-select" aria-label="Default select example">
+          <option>{{numeroContaDestino}}</option>
+        </select>
+      </div>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputSaldo">Saldo da Conta</label>
-      <input type="number" class="form-control" id="inputSaldo" #saldo>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="inputSaldo">Saldo da Conta</label>
+        <input type="number" class="form-control" id="inputSaldo" #saldo>
+      </div>
     </div>
-  </div>
-  <button  class="btn btn-info" style="margin-top: 10px" (click)="transferirValor(agencia||'',numeroConta||'',saldo.value || '')">Realizar Transferência</button>
-</form>
+    <div class="d-flex justify-content-center align-items-center">
+      <button class="btn btn-info" style="margin-top: 10px"
+              (click)="transferirValor(agencia||'',numeroConta||'',saldo.value || '')">Realizar Transferência
+      </button>
+    </div>
+  </form>
+</div>

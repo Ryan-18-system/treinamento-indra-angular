@@ -66,10 +66,19 @@
               Ações
             </button>
             <ul class="dropdown-menu">
+<<<<<<< HEAD
               <li><a class="dropdown-item" [routerLink]="['/operacao/',conta.agencia,conta.numero,'saque']">sacar</a></li>
               <li><a class="dropdown-item" [routerLink]="['/operacao/',conta.agencia,conta.numero,'deposito']">depositar</a></li>
               <li><a class="dropdown-item" [routerLink]="['/transferir/',conta.agencia,conta.numero]">transferir</a></li>
               <li><a class="dropdown-item" [routerLink]="['/extratos/',conta.numero,conta.agencia]">Extrato</a></li>
+=======
+              <li><a class="dropdown-item" [routerLink]="['/operacao/',conta.agencia,conta.numero,'saque']">sacar</a>
+              </li>
+              <li><a class="dropdown-item"
+                     [routerLink]="['/operacao/',conta.agencia,conta.numero,'deposito']">depositar</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/transferir/',conta.agencia,conta.numero]">transferir</a>
+              </li>
+>>>>>>> e430f0d36df182062ba7696f9ceb4f9c6cbfbdd7
               <li><a class="dropdown-item" (click)="excluirContaPorId(conta.id||0)">Excluir</a></li>
             </ul>
           </div>
