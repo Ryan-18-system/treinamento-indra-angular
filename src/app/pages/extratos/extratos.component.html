@@ -7,6 +7,7 @@
         <p class="card-text"><span class="badge text-bg-dark">Operação: {{extrato.tipoDeOperacao}}</span></p>
         <p class="card-text badge bg-danger" *ngIf="extrato.tipoDeOperacao == 'saque'">Valor: {{extrato.valor}}</p>
         <p class="card-text badge bg-success" *ngIf="extrato.tipoDeOperacao == 'deposito'">Valor: {{extrato.valor}}</p>
+        <p class="card-text badge bg-info" *ngIf="extrato.tipoDeOperacao == 'transferência'">Valor: {{extrato.valor}}</p>
       </div>
     </div>
   </div>

@@ -19,6 +19,7 @@ export class OperacaoComponent implements OnInit {
   newOperacao: ISaqueDeposito = {
     numeroConta: '',
     agencia: '',
+    transferencia: false,
     valor: 0
   }
 

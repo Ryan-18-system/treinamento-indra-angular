@@ -24,7 +24,6 @@ export class TransferenciaComponent implements OnInit {
               private contaService: ContasService
   ) {
     this.listarContas()
-
   }
 
   ngOnInit(): void {
