@@ -30,7 +30,7 @@ export class CadastrarContaComponent implements OnInit {
 
   newContaUser: IConta = {
     agencia: "",
-    cliente: undefined,
+    cliente: this.cliente,
     numero: "",
     saldo: 0,
   };
