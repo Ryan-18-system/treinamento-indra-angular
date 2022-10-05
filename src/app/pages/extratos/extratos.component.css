@@ -3,3 +3,10 @@
   border: solid 2px #342f2f;
   background-color: #8ac0e4;
 }
+button{
+  margin:10px;
+}
+input{
+  margin: 5px;
+  border: 1px solid grey;
+}

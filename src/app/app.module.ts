@@ -19,6 +19,11 @@ import { ExtratosComponent } from './pages/extratos/extratos.component';
 
 
 
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,14 +39,15 @@ import { ExtratosComponent } from './pages/extratos/extratos.component';
     ExtratosComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        FormsModule,
-        BrowserAnimationsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserAnimationsModule,
+
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

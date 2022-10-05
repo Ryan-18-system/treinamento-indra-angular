@@ -90,6 +90,10 @@ export class CadastrarContaComponent implements OnInit {
       this.newContaUser.saldo = 0
     }
     this.newContaUser.saldo = parseFloat(saldo)
+    if(this.newContaUser.saldo < 0){
+      this.mensagemService.mensagemDeError("Saldo inválido, por favor digite um saldo válido")
+      return
+    }
     this.contaService.cadastrarConta(this.newContaUser).subscribe({
       next: () => {
         this.mensagemService.mensagemDeSucesso("Conta Cadastrada com sucesso")

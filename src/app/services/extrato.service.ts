@@ -20,10 +20,7 @@ export class ExtratoServiceService {
   }
 
   listarPorIntervaloDeData(numeroConta: string, agencia: string, dataInicio: string, dataFinal: string): Observable<IExtrato[]> {
-    return this.http.get<IExtrato[]>(`${this.api}/${this.endpoint}${agencia}/${numeroConta}/${dataInicio}/${dataFinal}`)
+    return this.http.get<IExtrato[]>(`${this.api}/${this.endpoint}${numeroConta}/${agencia}/${dataInicio}/${dataFinal}`)
   }
 
-  listarPorDataEspecifica(numeroConta: string, agencia: string, data: string): Observable<IExtrato[]> {
-    return this.http.get<IExtrato[]>(`${this.api}/${this.endpoint}/${agencia}/${numeroConta}/${data}`)
-  }
 }
